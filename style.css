@@ -1,0 +1,391 @@
+.logo {
+    display: flex;           /* Membuat gambar & teks sejajar ke samping */
+    align-items: center;     /* Posisi vertikal rata tengah */
+    gap: 5px;               /* Jarak antara gambar dan tulisan */
+    font-size: 1.5rem;       /* Ukuran font tulisan */
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.logo img {
+    height: 80px;            /* Sesuaikan tinggi logo */
+    width: auto;             /* Lebar menyesuaikan otomatis */
+    object-fit: contain;     /* Agar gambar tidak gepeng */
+}
+
+/* Penyesuaian di HP */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2rem;   /* Tulisan lebih kecil di HP */
+        gap: 8px;
+    }
+    .logo img {
+        height: 35px;        /* Logo lebih kecil di HP */
+    }
+}
+:root {
+    --primary: #2563EB;
+    --primary-dark: #1E40AF;
+    --secondary: #06B6D4;
+    --accent: #F59E0B;
+    --dark: #1E293B;
+    --light: #F8FAFC;
+    --glass: rgba(255, 255, 255, 0.9);
+    --shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+body { background: var(--light); color: var(--dark); overflow-x: hidden; }
+
+/* --- Helper Classes --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; }
+.highlight { color: var(--primary); }
+.text-gradient { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.mt-5 { margin-top: 50px; }
+
+/* --- Navbar --- */
+nav {
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: var(--glass); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0;
+}
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); }
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+.nav-btn { background: var(--primary); color: white !important; padding: 8px 20px; border-radius: 50px; }
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
+
+/* --- Hero Section --- */
+.hero { padding-top: 150px; padding-bottom: 80px; position: relative; min-height: 100vh; display: flex; align-items: center; }
+.hero-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; z-index: -1; }
+.blob-1 { width: 300px; height: 300px; background: var(--primary); top: 0; right: 0; }
+.blob-2 { width: 300px; height: 300px; background: var(--secondary); bottom: 0; left: 0; }
+
+.badge { background: #DBEAFE; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; display: inline-block; margin-bottom: 15px; }
+h1 { font-size: 3.5rem; line-height: 1.2; font-weight: 800; margin-bottom: 20px; }
+.subtitle { font-size: 1.2rem; color: #64748B; margin-bottom: 20px; }
+.typing-text { color: var(--dark); font-weight: 700; }
+.desc { color: #64748B; margin-bottom: 30px; line-height: 1.6; max-width: 90%; font-size: 1.1rem; }
+.wa-info { font-size: 0.9rem; margin-top: 20px; color: #64748B; }
+
+.cta-group { display: flex; gap: 15px; flex-wrap: wrap; }
+.btn-primary, .btn-secondary {
+    padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 1rem;
+}
+.btn-primary { background: var(--primary); color: white; border: none; box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3); }
+.btn-secondary { background: white; color: var(--dark); border: 2px solid #E2E8F0; }
+.btn-primary:hover { transform: translateY(-3px); background: var(--primary-dark); }
+.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+
+.hero-image { text-align: center; }
+.main-svg { width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(37, 99, 235, 0.2)); animation: float 6s ease-in-out infinite; }
+
+/* --- Grids --- */
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+
+/* --- About --- */
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+.about-desc { text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #64748B; }
+.feature-box { text-align: center; padding: 30px; background: white; border-radius: 15px; border: 1px solid #F1F5F9; transition: 0.3s; }
+.feature-box:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--primary); }
+.icon-circle { width: 60px; height: 60px; background: #EFF6FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; }
+
+/* --- Services (Big Cards) --- */
+.service-card-large { background: white; padding: 40px; border-radius: 20px; border: 1px solid #E2E8F0; transition: 0.3s; }
+.service-card-large:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--primary); }
+.service-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+.icon-box { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.service-list-check { list-style: none; }
+.service-list-check li { padding: 8px 0; color: #475569; position: relative; padding-left: 25px; font-size: 1rem; }
+.service-list-check li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+/* --- Portfolio --- */
+.portfolio-item { background: #F8FAFC; padding: 10px; border-radius: 15px; text-align: center; border: 1px solid #E2E8F0; transition: 0.3s; cursor: pointer; }
+.portfolio-item:hover { transform: scale(1.05); box-shadow: var(--shadow); }
+.portfolio-item svg { width: 100%; border-radius: 10px; }
+.portfolio-item h4 { margin-top: 15px; font-weight: 600; color: var(--dark); }
+
+/* --- Pricing --- */
+.card { background: white; padding: 30px; border-radius: 20px; border: 1px solid #E2E8F0; transition: 0.3s; position: relative; overflow: hidden; }
+.price-card { text-align: center; }
+.price-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: var(--shadow); }
+.price-card.popular { border: 2px solid var(--primary); transform: scale(1.05); z-index: 2; }
+.tag { position: absolute; top: 0; right: 0; background: var(--accent); color: white; padding: 5px 15px; border-bottom-left-radius: 15px; font-size: 0.8rem; font-weight: bold; }
+.price { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 15px 0; }
+
+/* --- Steps --- */
+.steps-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.step-item { flex: 1; min-width: 150px; text-align: center; }
+.step-num { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4); }
+
+/* --- Testimonials --- */
+.testi-card { background: #EFF6FF; padding: 30px; border-radius: 15px; border-left: 5px solid var(--primary); }
+.testi-card p { font-style: italic; color: #475569; margin-bottom: 15px; }
+.testi-card h4 { color: var(--primary); font-size: 0.95rem; font-weight: 700; }
+
+/* --- FAQ --- */
+.faq-item { background: white; margin-bottom: 15px; border-radius: 10px; overflow: hidden; border: 1px solid #E2E8F0; }
+.faq-question { padding: 20px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+.faq-question:hover { color: var(--primary); }
+.faq-answer { max-height: 0; overflow: hidden; transition: 0.3s ease; padding: 0 20px; color: #64748B; font-size: 0.95rem; line-height: 1.6; }
+.faq-answer.open { padding-bottom: 20px; max-height: 200px; }
+
+/* --- Contact & Footer --- */
+.contact-card { text-align: center; }
+.contact-card i { font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
+.contact-card a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 1.1rem; }
+
+footer { background: var(--dark); color: white; padding: 60px 0 20px; margin-top: 50px; }
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col h3 { font-size: 1.2rem; margin-bottom: 20px; color: white; }
+.footer-col p { color: #94A3B8; line-height: 1.8; font-size: 0.9rem; }
+.footer-bottom { text-align: center; border-top: 1px solid #334155; padding-top: 20px; color: #64748B; font-size: 0.85rem; }
+
+/* --- Floating WA --- */
+.floating-wa { position: fixed; bottom: 25px; right: 25px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 999; text-decoration: none; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+/* --- Animation Class --- */
+.fade-up { opacity: 0; transform: translateY(30px); transition: 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-image { order: -1; margin-bottom: 30px; }
+    .cta-group { justify-content: center; }
+    .desc { margin: 0 auto 30px; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+        position: absolute; top: 70px; left: 0; width: 100%; background: white;
+        flex-direction: column; padding: 20px; gap: 15px; border-bottom: 1px solid #E2E8F0;
+        display: none; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .nav-links.active { display: flex; }
+    h1 { font-size: 2.2rem; }
+    .section-header h2 { font-size: 2rem; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .price-card.popular { transform: scale(1); }
+    .steps-grid { flex-direction: column; gap: 40px; }
+}
+/* --- Styles untuk Halaman Pricelist Lengkap --- */
+
+.pricelist-section {
+    padding: 40px 0 100px;
+    background: var(--light);
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+.back-link:hover { color: var(--primary); transform: translateX(-5px); }
+
+/* Tombol Aksi di Home */
+.pricing-action {
+    text-align: center;
+    margin-top: 40px;
+}
+.pricing-action p { margin-bottom: 15px; color: #64748B; }
+.btn-large {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+#searchInput {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border: 2px solid #E2E8F0;
+    border-radius: 50px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+#searchInput:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94A3B8;
+}
+
+/* Category Card & Accordion */
+.category-card {
+    padding: 0; /* Override default card padding */
+    overflow: hidden;
+    height: fit-content;
+}
+.cat-header {
+    padding: 20px 25px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+.cat-header:hover { background: #F8FAFC; }
+.cat-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cat-header h3 i { color: var(--primary); }
+.arrow { transition: 0.3s; color: #94A3B8; }
+.arrow.rotate { transform: rotate(180deg); }
+
+.cat-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+}
+.cat-body.show {
+    max-height: 1000px; /* Cukup besar untuk nampung list */
+}
+
+.price-list {
+    list-style: none;
+    padding: 20px 25px;
+}
+.price-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 0.95rem;
+    color: #475569;
+    display: flex;
+    justify-content: space-between;
+}
+.price-list li:last-child { border-bottom: none; }
+.price-list strong { color: var(--dark); }
+.section-label {
+    background: #DBEAFE;
+    color: var(--primary) !important;
+    font-weight: bold;
+    padding: 5px 10px !important;
+    border-radius: 5px;
+    margin: 10px 0 5px;
+    display: inline-block !important;
+    width: auto !important;
+}
+
+/* Notes Box */
+.notes-box {
+    background: #FEF3C7;
+    border-left: 5px solid #F59E0B;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+.notes-box h3 { color: #92400E; margin-bottom: 10px; font-size: 1.1rem; }
+.notes-box ul { padding-left: 20px; color: #92400E; }
+.notes-box li { margin-bottom: 5px; }
+
+/* Button WA Floating khusus halaman ini */
+.btn-wa-float {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #25D366;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+.btn-wa-float:hover { transform: translateX(-50%) translateY(-5px); }
+
+/* Responsif Halaman Pricelist */
+@media (max-width: 768px) {
+    .price-list li {
+        flex-direction: column;
+        gap: 2px;
+    }
+    .cat-header h3 { font-size: 1rem; }
+    #searchInput { font-size: 0.9rem; }
+}
+/* --- Style Khusus Logo di Footer --- */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;           /* Jarak antara gambar dan tulisan */
+    margin-bottom: 20px; /* Jarak ke paragraf di bawahnya */
+}
+
+.footer-brand img {
+    height: 80px;        /* Ukuran logo di footer (sedikit lebih kecil dari navbar) */
+    width: auto;
+}
+
+.footer-brand h3 {
+    margin: 0;           /* Hapus margin bawaan h3 agar sejajar */
+    font-size: 1.4rem;
+    color: white;        /* Pastikan teks putih karena background footer gelap */
+    font-weight: 800;
+}
+/* --- Style Portfolio / Orderan Kami --- */
+
+.portfolio-item {
+    padding: 0;             /* Hilangkan padding agar gambar full */
+    overflow: hidden;       /* Wajib: agar saat zoom, gambar tidak keluar kotak */
+    border-radius: 15px;    /* Sudut melengkung */
+    
+    /* Membuat bentuk Persegi Panjang Tinggi (Portrait) */
+    aspect-ratio: 9/16;     /* Rasio seperti layar HP/Story IG */
+    /* Jika ingin ukuran fix, bisa pakai: height: 400px; */
+    
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Agar gambar mengisi penuh tanpa gepeng */
+    display: block;
+    transition: transform 0.5s ease; /* Kecepatan animasi zoom (0.5 detik) */
+}
+
+/* --- Efek Zoom Saat Kursor Menyentuh (Hover) --- */
+.portfolio-item:hover img {
+    transform: scale(1.1);  /* Memperbesar gambar 110% */
+}

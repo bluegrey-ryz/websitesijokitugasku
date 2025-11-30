@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joki Tugas & Jasa Print - Biar Tugas Numpuk, Kamu Tetap Santuy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-wrapper">
+          <div class="logo">
+    <img src="assets/logo.png" alt="Logo SiJokiTugasku">
+    SiJoki.<span class="highlight">Tugasku</span>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="toggleMenu()">Beranda</a></li>
+                <li><a href="#services" onclick="toggleMenu()">Layanan</a></li>
+                <li><a href="#portfolio" onclick="toggleMenu()">Orderan</a></li>
+                <li><a href="#pricing" onclick="toggleMenu()">Harga</a></li>
+                <li><a href="#steps" onclick="toggleMenu()">Cara Order</a></li>
+                <li><a href="#contact" class="nav-btn" onclick="toggleMenu()">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="container hero-container">
+            <div class="hero-text fade-up">
+                <span class="badge">🚀 Fast Response & Trusted</span>
+                <h1>Biar Tugas Numpuk, <br> <span class="text-gradient">Tetap Santuy!</span></h1>
+                <p class="subtitle">Kami bantu kerjain <span class="typing-text"></span><span class="cursor">|</span></p>
+                <p class="desc">Serahin tugas sekolah/kuliah kamu, biar kami yang beresin. Hasil rapi, cepat, dan natural.</p>
+                
+                <div class="cta-group">
+                    <a href="https://wa.me/6285169937561?text=Halo%20kak,%20mau%20order%20joki%20tugas%20dong" target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Chat via WA
+                    </a>
+                    <button onclick="copyWhatsAppNumber(this)" class="btn-secondary">
+                        📋 Copy Nomor
+                    </button>
+                </div>
+                <p class="wa-info">📱 WhatsApp: <strong>0851-6993-7561</strong></p>
+            </div>
+
+            <div class="hero-image fade-up">
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" class="main-svg">
+                    <rect x="100" y="180" width="300" height="180" rx="10" fill="#2563EB" /> 
+                    <rect x="110" y="190" width="280" height="140" fill="#BFDBFE" /> 
+                    <line x1="140" y1="220" x2="360" y2="220" stroke="white" stroke-width="4" opacity="0.8" /> 
+                    <line x1="140" y1="250" x2="340" y2="250" stroke="white" stroke-width="4" opacity="0.8" /> 
+                    <line x1="140" y1="280" x2="320" y2="280" stroke="white" stroke-width="4" opacity="0.8" /> 
+                    <rect x="50" y="360" width="400" height="20" rx="5" fill="#1E40AF" /> 
+                    <circle cx="380" cy="120" r="40" fill="#2563EB" /> 
+                    <path d="M380 160 L380 240 M380 190 L350 220 M380 190 L410 220 M380 240 L350 280 M380 240 L410 280" stroke="#1E40AF" stroke-width="8" stroke-linecap="round" /> 
+                    <rect x="30" y="320" width="40" height="60" fill="#BFDBFE" /> 
+                    <rect x="440" y="300" width="40" height="80" fill="#BFDBFE" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Tentang <span class="highlight">Kami</span></h2>
+                <p>Kami adalah tim profesional yang siap membantu kamu menyelesaikan berbagai tugas akademik.</p>
+            </div>
+            <div class="about-desc fade-up">
+                <p>Dari makalah, essay, PPT, sampai laporan, semua dikerjakan dengan serius tapi tetap santai. Hasilnya? Natural banget, kayak kamu yang ngerjain sendiri!</p>
+            </div>
+            <div class="grid-4 mt-5">
+                <div class="feature-box fade-up">
+                    <div class="icon-circle">⚡</div>
+                    <h3>Fast Response</h3>
+                    <p>Respon cepat dalam hitungan menit. Chat langsung dibalas!</p>
+                </div>
+                <div class="feature-box fade-up">
+                    <div class="icon-circle">⏰</div>
+                    <h3>Deadline Fleksibel</h3>
+                    <p>Santai atau mepet, sama-sama kami terima.</p>
+                </div>
+                <div class="feature-box fade-up">
+                    <div class="icon-circle">🔄</div>
+                    <h3>Revisi Gratis</h3>
+                    <p>Ga puas? Bisa ajuin revisi loh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Layanan <span class="highlight">Kami</span></h2>
+                <p>Apa saja yang bisa kami bantu?</p>
+            </div>
+            <div class="grid-2">
+                <div class="card service-card-large fade-up">
+                    <div class="service-header">
+                        <div class="icon-box">📝</div>
+                        <h3>Joki Tugas Akademik</h3>
+                    </div>
+                    <ul class="service-list-check">
+                        <li>Makalah</li>
+                        <li>Tugas</li>
+                        <li>Essay</li>
+                        <li>Presentasi (PPT)</li>
+                        <li>Laporan Praktikum</li>
+                        <li>Resume / CV</li>
+                        <li>Ringkasan Materi</li>
+                        <li>Editing/Proofreading</li>
+                        <li>Landing Page</li>
+                        <li>Website</li>
+                        <li>Buat Akun Dll</li>
+                    </ul>
+                </div>
+                <div class="card service-card-large fade-up">
+                    <div class="service-header">
+                        <div class="icon-box">🖨️</div>
+                        <h3>Jasa Print (Area PBG)</h3>
+                    </div>
+                    <ul class="service-list-check">
+                        <li>Print Hitam Putih</li>
+                        <li>Print Warna</li>
+                        <li>Print Kertas Binder</li>
+                        <li>Jilid Soft Cover</li>
+                        <li>Jilid Hard Cover</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="portfolio" class="portfolio section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Orderan <span class="highlight">Kami</span></h2>
+                <p>Terimakasih sudah percaya dan order di JokiTugas.</p>
+            </div>
+            
+            <div class="grid-4 portfolio-grid">
+                <div class="card portfolio-item fade-up">
+                    <img src="assets/testi1.jpg" alt="Bukti Order 1">
+                </div>
+                <div class="card portfolio-item fade-up">
+                    <img src="assets/testi2.jpg" alt="Bukti Order 2">
+                </div>
+                <div class="card portfolio-item fade-up">
+                    <img src="assets/testi3.jpg" alt="Bukti Order 3">
+                </div>
+                <div class="card portfolio-item fade-up">
+                    <img src="assets/testi4.jpg" alt="Bukti Order 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="pricing" class="pricing section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Daftar <span class="highlight">Harga</span></h2>
+                <p>Pilihan paket hemat untuk mahasiswa.</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card price-card fade-up">
+                    <h3>Tugas Ringan</h3>
+                    <div class="price">Mulai 10k</div>
+                    <p>Resume, Review, Ketik Ulang</p>
+                </div>
+                <div class="card price-card popular fade-up">
+                    <div class="tag">Best Seller</div>
+                    <h3>Makalah / PPT</h3>
+                    <div class="price">Mulai 20k</div>
+                    <p>Terima beres, rapi, siap kumpul</p>
+                </div>
+                <div class="card price-card fade-up">
+                    <h3>Skripsi / TA</h3>
+                    <div class="price">Nego</div>
+                    <p>Bimbingan, Olah Data, Proposal</p>
+                </div>
+            </div>
+
+            <div class="pricing-action fade-up">
+                <p>Ingin melihat daftar harga satuan (Transkrip, Revisi, Soal, Desain)?</p>
+                <a href="pricelist.html" class="btn-primary btn-large">
+                    📜 Lihat Pricelist Lengkap
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Kata <span class="highlight">Mereka</span></h2>
+            </div>
+            <div class="grid-3 testimonial-slider">
+                <div class="testi-card fade-up">
+                    <p>"Fast respon banget! Makalahnya juga rapi, dosen sampe puji. Recommended deh!"</p>
+                    <h4>- Rina</h4>
+                </div>
+                <div class="testi-card fade-up">
+                    <p>"Deadline mepet masih bisa dilayani. Hasilnya natural kayak aku yang ngerjain. Makasih banyak!"</p>
+                    <h4>- Alfin</h4>
+                </div>
+                <div class="testi-card fade-up">
+                    <p>"Harganya terjangkau untuk kantong mahasiswa. Kualitas juga oke. Pasti order lagi!"</p>
+                    <h4>- Sari</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="how-to-order section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Cara <span class="highlight">Order</span></h2>
+                <p>Gampang banget, berikut urutannya!</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item fade-up">
+                    <div class="step-num">1</div>
+                    <h3>Kirim Detail</h3>
+                    <p>Kirim detail tugas via WA + Deadline tugas</p>
+                </div>
+                <div class="step-item fade-up">
+                    <div class="step-num">2</div>
+                    <h3>Dapat Harga</h3>
+                    <p>Kami kasih estimasi harga</p>
+                </div>
+                  <div class="step-item fade-up">
+                    <div class="step-num">3</div>
+                    <h3>Deal Kesepatan</h3>
+                    <p>Cutomer dan sijoki</p>
+                </div>
+                  <div class="step-item fade-up">
+                    <div class="step-num">4</div>
+                    <h3>Pembayaran DP</h3>
+                    <p>Customer wajib bayar DP 30-50%</p>
+                </div>
+                <div class="step-item fade-up">
+                    <div class="step-num">5</div>
+                    <h3>Tugas Dikerjakan</h3>
+                    <p>Tim kami langsung eksekusi</p>
+                </div>
+                 <div class="step-item fade-up">
+                    <div class="step-num">6</div>
+                    <h3>Draft Bukti Tugas Selesai</h3>
+                    <p>Tim kami mengirimkan screenshot bahwa tugas selesai dikerjakan</p>
+                </div>
+                  <div class="step-item fade-up">
+                    <div class="step-num">7</div>
+                    <h3>Pelunasan</h3>
+                    <p>Customer wajib melakukan pelunasan sebelum tugas realnya dikirim</p>
+                </div>
+                  <div class="step-item fade-up">
+                    <div class="step-num">8</div>
+                    <h3>Kirim File Asli</h3>
+                    <p>Tim kami mengirimkan file tugas aslinya</p>
+                </div>
+                <div class="step-item fade-up">
+                    <div class="step-num">9</div>
+                    <h3>Review & Revisi</h3>
+                    <p>Cek hasil, revisi gratis</p>
+                </div>
+                <div class="step-item fade-up">
+                    <div class="step-num">10</div>
+                    <h3>Selesai!</h3>
+                    <p>Tugas rapi, kamu happy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>FAQ</h2>
+                <p>Pertanyaan yang sering ditanyakan.</p>
+            </div>
+            <div class="faq-wrapper fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">Bisa deadline mepet?</div>
+                    <div class="faq-answer">Bisa banget! Kami terbiasa dengan deadline mepet. Tinggal info aja kapan harus selesai, kami usahakan semaksimal mungkin.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Aman nggak?</div>
+                    <div class="faq-answer">Sangat aman! Data kamu dijaga kerahasiaannya. Kami tidak menyimpan atau menyebar informasi pribadi kamu.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Bisa revisi?</div>
+                    <div class="faq-answer">Bisa! Revisi gratis sampai kamu puas dengan hasilnya. Kepuasan kamu prioritas kami.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Pembayaran gimana?</div>
+                    <div class="faq-answer">Pembayaran bisa via transfer bank (BCA, Seabank), e-wallet (Dana, shopeepay). Sistem DP atau full payment sesuai kesepakatan.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>Hubungi <span class="highlight">Kami</span></h2>
+            </div>
+            <div class="grid-3 contact-grid">
+                <div class="card contact-card fade-up">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/6285169937561">0851-6993-7561</a>
+                </div>
+                <div class="card contact-card fade-up">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <a href="https://instagram.com/jokitugas">@sijoki_tugasku</a>
+                </div>
+                <div class="card contact-card fade-up">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Lokasi</h3>
+                    <p>Area Purwokerto & Purbalingga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+    <div class="footer-brand">
+        <img src="assets/logo.png" alt="Logo JokiTugas">
+        <h3>SiJoki.<span class="highlight">Tugasku</span></h3>
+    </div>
+    <p>Solusi tugas akademik kamu. Fast, reliable, dan terpercaya.</p>
+</div>
+            <div class="footer-col">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Minggu <br> 08.00 - 22.00 WIB <br> (Chat 24/7)</p>
+            </div>
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <p>Joki Tugas <br> Jasa Print <br> Editing & Proofreading <br> IT Development</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 JokiTugas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6285169937561" target="_blank" class="floating-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

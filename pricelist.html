@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Harga Lengkap - JokiTugas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Home</a>
+            <div class="logo">📚 Pricelist<span class="highlight">Lengkap.</span></div>
+        </div>
+    </nav>
+
+    <section class="pricelist-section">
+        <div class="container">
+            <div class="search-container fade-up">
+                <input type="text" id="searchInput" placeholder="Cari layanan... (misal: ppt, skripsi, translate)" onkeyup="filterPrices()">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <div class="grid-2 price-container" id="priceGrid">
+
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-language"></i> Translate & Tulis</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li><strong>Joki Translate Asing:</strong> 100-500 perak/kata</li>
+                            <li><strong>Joki Translate Asing:</strong> Start 30k/hal (tergantung kesulitan)</li>
+                            <li><strong>Tulis Buku Kecil (A5):</strong> 4k/hal</li>
+                            <li><strong>Tulis Buku Besar (B5):</strong> 6k/hal</li>
+                            <li><strong>Tulis HVS A4/F4:</strong> 8k/hal</li>
+                            <li><strong>Tulis Bahasa Asing:</strong> 2k-5k/hal</li>
+                            <li><strong>Tulis Bahasa Arab:</strong> 10k-25k/hal</li>
+                            <li><strong>Ketik Word:</strong> 5k/hal atau 5k/300 kata</li>
+                            <li><strong>Ketik Excel (Rumus):</strong> 15k/hal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-book"></i> Makalah & Laporan</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li><strong>Makalah (Materi Cust):</strong> 10k/hal</li>
+                            <li><strong>Makalah (Campuran):</strong> 15k/hal</li>
+                            <li><strong>Makalah (Full Joki):</strong> 20k/hal</li>
+                            <li><strong>Makalah + Parafrase:</strong> 25k-65k/hal</li>
+                            <li><strong>Parafrase (1-10%):</strong> Start 10k/hal</li>
+                            <li><strong>Parafrase (11-30%):</strong> Start 15k/hal</li>
+                            <li><strong>Parafrase (>30%):</strong> Start 20k/hal</li>
+                            <li><strong>Review Jurnal:</strong> Start 35k/jurnal</li>
+                            <li><strong>Resume Video:</strong> Start 5k/10 menit</li>
+                            <li><strong>Resume Buku/File:</strong> 25k-35k/hal jadi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-pen-nib"></i> Revisi & Format</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li><strong>Format PUEBI:</strong> 1k/hal</li>
+                            <li><strong>Format + Typo:</strong> 3k/hal</li>
+                            <li><strong>Format + Typo + Edit Kata:</strong> 5k/hal</li>
+                            <li><strong>Daftar Pustaka (Mendeley):</strong> 2k/sumber (jika ada file)</li>
+                            <li><strong>Daftar Pustaka (Manual):</strong> 3k/sumber (jika ada file)</li>
+                            <li><strong>Daftar Pustaka (Cari Sendiri):</strong> 5k/sumber</li>
+                            <li><strong>Daftar Isi:</strong> 10k-20k/hal</li>
+                            <li><strong>Penomoran Halaman:</strong> 1k-2k/10 hal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-desktop"></i> Power Point (PPT)</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li class="section-label">Materi dari Customer:</li>
+                            <li><strong>Template Kosongan:</strong> 2k/slide</li>
+                            <li><strong>Template Software:</strong> 3k/slide</li>
+                            <li><strong>Template Desain:</strong> 5k/slide</li>
+                            <li class="section-label">Materi dari Penjoki:</li>
+                            <li><strong>Tanpa Rangkuman:</strong> 2k/slide + harga template</li>
+                            <li><strong>Dengan Rangkuman:</strong> 7k-10k/slide</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-calculator"></i> Soal & Data</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li><strong>Soal SMA (PG):</strong> 4k-7k/soal</li>
+                            <li><strong>Soal SMA (Esai):</strong> 7k-15k/soal</li>
+                            <li><strong>Soal Kuliah (PG):</strong> 6k-10k/soal</li>
+                            <li><strong>Soal Kuliah (Esai):</strong> 15k-50k/soal</li>
+                            <li><strong>Uji SPSS/Eviews:</strong> 25k/uji</li>
+                            <li><strong>Olah Data Skripsi:</strong> 50k/uji</li>
+                            <li><strong>Cari Jurnal (Indo Non-Sinta):</strong> 5k/jurnal</li>
+                            <li><strong>Cari Jurnal (Indo Sinta 1-6):</strong> 8-15k/jurnal</li>
+                            <li><strong>Cari Jurnal (Internasional):</strong> 10k-25k/jurnal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-paint-brush"></i> Desain & Video</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li><strong>Poster/Banner/Logo:</strong> Start 30k</li>
+                            <li><strong>Feeds IG Sederhana:</strong> 15k/3 feeds</li>
+                            <li><strong>Feeds IG Aesthetic:</strong> 30k/3 feeds</li>
+                            <li><strong>Twibbon:</strong> Start 30k</li>
+                            <li><strong>Edit Background Foto:</strong> Start 20k</li>
+                            <li><strong>Gambar Manual (A4):</strong> 35k-150k</li>
+                            <li><strong>Mindmapping Digital:</strong> 15k-25k</li>
+                            <li><strong>Mindmapping Manual:</strong> 20k-75k</li>
+                            <li><strong>Edit Video Simpel:</strong> 10k/menit</li>
+                            <li><strong>Edit Video Full:</strong> 25k/menit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-code"></i> IT & Development</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li class="section-label">Website & Web Design</li>
+                            <li><strong>Tugas HTML/CSS/JS:</strong> Start 50k/halaman</li>
+                            <li><strong>Landing Page (Promo/Bio):</strong> Start 150k</li>
+                            <li><strong>Website Company Profile:</strong> Start 350k (3-5 Halaman)</li>
+                            <li><strong>UI/UX Design (Figma):</strong> Start 35k/screen</li>
+                            
+                            <li class="section-label">Aplikasi & Sistem</li>
+                            <li><strong>Web Apps (CRUD Sederhana):</strong> Start 500k</li>
+                            <li><strong>Aplikasi Skripsi (Source Code):</strong> Start 1.5jt - 3jt</li>
+                            <li><strong>Bug Fixing / Error:</strong> Start 50k/kasus</li>
+
+                            <li class="section-label">GIS (QGIS)</li>
+                            <li><strong>Peta Desa:</strong> Start 50k</li>
+                            <li><strong>Peta Kecamatan:</strong> Start 80k</li>
+                            <li><strong>Peta Kabupaten:</strong> Start 100k</li>
+                        </ul>
+                    </div>
+                </div>
+ 
+                <div class="card category-card fade-up">
+                    <div class="cat-header" onclick="toggleAccordion(this)">
+                        <h3><i class="fas fa-star"></i> Lain-lain</h3>
+                        <i class="fas fa-chevron-down arrow"></i>
+                    </div>
+                    <div class="cat-body">
+                        <ul class="price-list">
+                            <li><strong>Cek Turnitin:</strong> 3k/Cek</li>
+                            <li><strong>CV Sederhana:</strong> Start 25k</li>
+                            <li><strong>CV ATS Friendly:</strong> Start 50k</li>
+                            <li><strong>Joki TOEFL (350-450):</strong> 300k-500k</li>
+                            <li><strong>Joki TOEFL (>450):</strong> 500k-700k</li>
+                            <li><strong>Puisi/Pantun:</strong> 8k/bait</li>
+                            <li><strong>Voice Over:</strong> Start 5k/menit</li>
+                            <li><strong>Transkrip Audio:</strong> Start 5k/menit</li>
+                            <li><strong>Kliping:</strong> Start 15k/hal</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="notes-box fade-up">
+                <h3>📌 Catatan Penting:</h3>
+                <ul>
+                    <li>Harga di atas adalah referensi, bisa lebih murah atau mahal tergantung kesulitan & deadline.</li>
+                    <li><strong>Deadline Mepet = Harga Naik (Biaya Prioritas).</strong></li>
+                    <li>DP 30%-50% wajib di awal sebelum pengerjaan.</li>
+                    <li>Revisi gratis sesuai kesepakatan awal (bukan ganti materi total).</li>
+                </ul>
+            </div>
+
+            <div class="floating-cta">
+                <a href="https://wa.me/6285169937561" class="btn-wa-float">
+                    <i class="fab fa-whatsapp"></i> Pesan Sekarang
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // 1. Logika Agar Konten Muncul (Animasi Fade Up)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 2. Logika Accordion (Buka Tutup Kategori)
+        function toggleAccordion(element) {
+            const body = element.nextElementSibling;
+            const arrow = element.querySelector('.arrow');
+            
+            // Toggle class show untuk membuka isi
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null;
+                body.classList.remove('show');
+            } else {
+                body.classList.add('show');
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+            
+            // Putar panah
+            arrow.classList.toggle('rotate');
+        }
+
+        // 3. Logika Search (Pencarian)
+        function filterPrices() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const grid = document.getElementById('priceGrid');
+            const cards = grid.getElementsByClassName('category-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                // Ambil semua teks di dalam kartu
+                let textContent = cards[i].textContent || cards[i].innerText;
+                
+                // Cek apakah teks pencarian ada di dalam kartu
+                if (textContent.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
